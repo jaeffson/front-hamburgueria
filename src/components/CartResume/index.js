@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 
 import api from '../../services/api'
 import formatCurrency from '../FormatCurrency'
-import { Button } from '../Button'
+import { Button } from '../button'
 import { Container } from './styles'
 import { useCard } from '../../hooks/CardContext'
 
