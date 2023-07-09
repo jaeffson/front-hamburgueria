@@ -10,14 +10,14 @@ import { Link } from 'react-router-dom';
 import { ErrorMesssage,Container, ContainerItens, Label, Input, SiginLink, RegisterImage } from './styles'
 import RegisterImg from '../../assents/imgRegister.svg'
 import Logo from '../../assents/cadastroClient.png'
-import Button from '../../components/button';
+import {Button} from '../../components';
 import api from '../../services/api'
 import { toast } from 'react-toastify';
 
 
 
 
-function Register() {
+export function Register() {
     //validacao dos campos
     const schema =
     yup.object().shape({
@@ -40,7 +40,7 @@ function Register() {
 
         const onSubmit = async clientData => {
             try{
-                const {status} = await api.post('users',{
+                const {status} = await api.post('/users',{
                 name:clientData.name,
                 email:clientData.email,
                 password:clientData.password
@@ -90,10 +90,9 @@ function Register() {
                 </form>
 
                 <SiginLink>
-                    Já possui conta? <Link style={{color:'white'}} to="/login"  >Login</Link>
+                    Já possui conta? <Link style={{color:'#6d6969'}} to="/login"  >Login</Link>
                 </SiginLink>
             </ContainerItens>
         </Container>
     )
 }
-export default Register

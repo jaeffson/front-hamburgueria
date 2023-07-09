@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from "react";
-import OfferImg from '../../assents/OFERTAS.png'
-import { Container, CategoryImg, ContainerItems,Image, Button } from "./styles";
+import { Container, OfferH1, ContainerItems,Image, Button } from "./styles";
 import Carousel from 'react-elastic-carousel'
 import api from '../../services/api'
-import formatCurrency from "../FormatCurrency";
+import formatCurrency from '../FormatCurrency';
+import { useCard } from "../../hooks/CardContext";
+import {useNavigate } from "react-router-dom";
 
 
-function OffersCarrossel(){
-    const [offers, setoffer] = useState([])
+
+export function OffersCarrossel(){
+    const [offers, setOffer] = useState([])
+    const {putProductIncart } = useCard()
+    const navigate = useNavigate()
+
+
+
 
     useEffect(() => {
         async function loadoffer() {
@@ -16,8 +23,8 @@ function OffersCarrossel(){
            const onlyOffers = data.filter(product => product.offer).map(product =>{
             return{...product,formatPrice:formatCurrency(product.price)}
            })
-            setoffer(onlyOffers)
-           console.log(onlyOffers)
+            setOffer(onlyOffers)
+          
         }
 
         loadoffer()
@@ -32,7 +39,7 @@ function OffersCarrossel(){
 
     return (
         <Container>
-            <CategoryImg src={OfferImg} alt="offer img"/>
+            <OfferH1>OFERTAS</OfferH1>
             <Carousel itemsToShow={5} style={{width: '90%'}} breakPoints={breakPoints}>
             {
               offers && offers.map(product => (
@@ -40,7 +47,12 @@ function OffersCarrossel(){
                     <Image src={product.url} alt="foto da ofertas"/>
                     <p className="name-product">{product.name}</p>
                     <p>{product.formatPrice}</p>
-                    <Button>Peça agora</Button>
+                    <Button  to="/carrinho"
+                onClick={() => {
+                    putProductIncart(product)
+                  navigate('/carrinho')
+                }}>
+                        Peça agora</Button>
                 </ContainerItems>
               )) 
             }
@@ -49,4 +61,4 @@ function OffersCarrossel(){
     )
 }
 
-export default OffersCarrossel;
+

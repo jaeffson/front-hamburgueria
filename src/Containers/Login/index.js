@@ -11,18 +11,16 @@ import { toast } from 'react-toastify';
 import { useUser } from '../../hooks/UserContext';
 import { Link, useNavigate } from 'react-router-dom';
 
-
-
 import { ErrorMesssage, Container, ContainerItens, Label, Input, SiginLink, LoginImage } from './styles'
 import LoginImg from '../../assents/login-Imagem.svg'
 import Logo from '../../assents/LoginIcon.png'
-import Button from '../../components/button';
+import {Button} from '../../components';
 import api from '../../services/api'
 
 
 
 
-function login() {
+export function Login() {
    
     //validacao dos campos
     const NavHistory = useNavigate()
@@ -57,9 +55,14 @@ function login() {
 
         putUserData(data)
         setTimeout(()=>{
-       NavHistory('/')
+            if(data.admin){
+                NavHistory('/pedidos')
+            }else{
+                NavHistory('/')
+            }
+       
 
-        },1000)
+        },2000)
       
 
     }
@@ -84,10 +87,9 @@ function login() {
                     <Button type="submit" style={{ marginTop: 25 }}>Login</Button>
                 </form>
 
-                <SiginLink>Não possui conta? <Link style={{ color: 'white' }} to="/cadastro">Criar</Link>
+                <SiginLink>Não possui conta? <Link style={{ color: '#6d6969' }} to="/cadastro">Criar</Link>
                 </SiginLink>
             </ContainerItens>
         </Container>
     )
 }
-export default login

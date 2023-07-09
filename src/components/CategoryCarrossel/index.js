@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
-import Categoryy from '../../assents/CATEGORIAS.png'
+
+import React, { useEffect, useState} from "react";
+
 import api from '../../services/api'
-import { Container, CategoryImg, ContainerItems,Image, Button } from "./styles";
+import { Container,CategoryH1, ContainerItems,Image, Button } from "./styles";
 import Carousel from 'react-elastic-carousel'
 
 
-function CategoryCarrossel(){
+export function CategoryCarrossel(){
+  
+
     const [categories, setCategories] = useState([])
 
     useEffect(() => {
@@ -27,13 +30,16 @@ function CategoryCarrossel(){
 
     return (
         <Container>
-            <CategoryImg src={Categoryy} alt="Categoria img"/>
+           
+            <CategoryH1>CATEGORIAS</CategoryH1>
             <Carousel itemsToShow={5} style={{width: '90%'}} breakPoints={breakPoints}>
             {
               categories && categories.map(category => (
                 <ContainerItems key={category.id}>
                     <Image src={category.url} alt="foto da categoria"/>
-                    <Button>{category.name}</Button>
+                    <Button to="/produtos" state={{ categoryId: category.id }}>
+                {category.name}
+              </Button>
                 </ContainerItems>
               )) 
             }
@@ -42,4 +48,3 @@ function CategoryCarrossel(){
     )
 }
 
-export default CategoryCarrossel;

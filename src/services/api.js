@@ -1,13 +1,12 @@
 import axios from 'axios'
  const apiHamburguer = axios.create({
-    baseURL:'http://localhost:3001'
+    baseURL:'https://projetoapihamburgueria-production.up.railway.app/'
 })
 
 apiHamburguer.interceptors.request.use(async config =>{
     const userData = await localStorage.getItem('burger:userData')
     const token = userData && JSON.parse(userData).token
-    console.log('Token:', token);
-    config.headers.Authorization = `Bearer ${token}`
+    config.headers.authorization = `Bearer ${token}`
    
     return config
 

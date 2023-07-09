@@ -2,40 +2,41 @@ import styled from 'styled-components'
 
 
 export const Container = styled.div`
-        height: 100vh;
+   background: linear-gradient(to right, #ff4b2b, #ff416c);
+       height: 100vh;
         width: 100vw;
-        background: rgb(0,0,0);
-background: linear-gradient(346deg, rgba(0,0,0,1) 0%, rgba(139,36,126,1) 94%);
         display:flex;
         justify-content: center;
         align-items: center;
-
 `
 export const RegisterImage = styled.img`
 height: 80%;
 `
 export const ContainerItens = styled.div`
 
-background:-webkit-linear-gradient(left, #272627, #474747);
-box-shadow: 0px 4px 15px rgba(74, 144, 226, 0.24);
+background-color: #FFFFFF;
 border-top-right-radius :70px;
 height: 80%;
-padding: 10px 70px;
+padding: 25px 70px;
 display: flex;
 justify-content: center;
 flex-direction: column;
+box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+
+
 
 img{
-    width: 150px;
+    width: 100px;
     margin:auto;
 }
 h1{
-font-weight: 500;
+    font-weight: 500;
 font-size: 25px;
 line-height: 20px;
-color: #FFFFFF;
+color:#6d6969;
 text-align: center;
-
+margin-top: 2px;
 }
 form{
     display: flex;
@@ -46,11 +47,12 @@ export const Label = styled.p`
 
 font-size: 12px;
 line-height: 14px;
-color: #FFFFFF;
 margin-top:  ${props => (props.error ? '5px  #CC1717' : '10px')};
-margin-bottom:1px;
-
-
+margin-bottom:5px;
+font-weight: 500;
+font-size: 12px;
+line-height: 14px;
+color:#6d6969;
 
 
 
@@ -64,14 +66,15 @@ margin-top: 3px;
 
 `
 export const Input = styled.input`
-background: #FFFFFF;
+background:#eee;
 box-shadow: 3px 3px 10px rgba(74, 144, 226, 0.19);
-border-radius: 10px;
+border-radius: 5px;
 width: 391px;
-height: 39px;
+height: 40px;
 border: ${props => (props.error ? '2px solid  #CC1717' : 'none')};
 padding-left: 10px;
 font-size: 20px;
+
 
 `
 
@@ -79,7 +82,7 @@ export const SiginLink = styled.p`
 font-weight: 300;
 font-size: 14px;
 line-height: 16px;
-color: #FFFFFF;
+color:#6d6969;
 margin-top: 5px;
 margin-left: 5px;
 

@@ -1,17 +1,15 @@
 import React from "react";
-import HomeLogo from '../../assents/home-Logo.svg'
+import HomeLogo from '../../assents/backgroundburguer.jpg'
 import { Container, HomeImg } from "./styles";
-import Category from "../../components/CategoryCarrossel";
-import OfferCarrossel from "../../components/OfferCarrosell";
+import { OffersCarrossel, CategoryCarrossel } from "../../components";
 
 
-function Home(){
-    return(
+export function Home() {
+    return (
         <Container>
-            <HomeImg src={HomeLogo} alt="Home-logo"/>
-       <Category/>
-       <OfferCarrossel/>
+          <HomeImg src={HomeLogo}  alt="Home-logo" />
+            <CategoryCarrossel />
+            <OffersCarrossel />
         </Container>
     )
 }
-export default Home
