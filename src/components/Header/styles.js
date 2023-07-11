@@ -4,7 +4,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 
 export const Container = styled.div`
-position: fixed;
+
 height:70px;
 background: #FFFFFF;
 box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.15);
@@ -13,8 +13,14 @@ align-items: center;
 flex-direction: row;
 justify-content: space-around;
 width: 100vw;
-z-index: 999;
+
+.hAEdfP{
+  position:sticky;
+  top: 1px;
+  z-index: 1;
+}
 `
+
 
 
 export const ContainerLeft = styled.div`

@@ -1,6 +1,6 @@
 import axios from 'axios'
  const apiHamburguer = axios.create({
-    baseURL:'https://projetoapihamburgueria-production.up.railway.app/'
+    baseURL:'https://projetoapihamburgueria-production.up.railway.app'
 })
 
 apiHamburguer.interceptors.request.use(async config =>{
