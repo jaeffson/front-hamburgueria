@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ProductLogo from '../../assents/background-deliciousburguer.jpg'
+import ProductLogo from '../../assents/header.jpg'
 import { Container, ProductImg, CategoryButton, CategoriesMenu, ProductosContainer } from "./styles";
 import api from '../../services/api'
 import { CardProducts } from "../../components";

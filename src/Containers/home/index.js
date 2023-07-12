@@ -1,5 +1,5 @@
 import React from "react";
-import HomeLogo from '../../assents/backgroundburguer.jpg'
+import HomeLogo from '../../assents/header1.jpg'
 import { Container, HomeImg } from "./styles";
 import { OffersCarrossel, CategoryCarrossel } from "../../components";
 

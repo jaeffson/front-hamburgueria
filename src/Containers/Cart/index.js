@@ -1,5 +1,5 @@
 import React from "react";
-import cartImg from '../../assents/cart-image.svg'
+import cartImg from '../../assents/logoCarrinhoHeader.jpg'
 import { Container, CartImg, Wrapeer } from "./styles";
 import { CartItems, CartResume } from "../../components";
 import { Navigate } from "react-router-dom";
