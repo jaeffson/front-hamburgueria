@@ -69,13 +69,13 @@ export function Login() {
     return (
 
         <Container>
-            <LoginImage src={LoginImg}></LoginImage>
+            <LoginImage className='login-image' src={LoginImg}></LoginImage>
 
-            <ContainerItens>
+            <ContainerItens className='containerItens'>
 
                 <img src={Logo} alt='foto-hamburger-login' />
                 <h1>Login</h1>
-                <form noValidate onSubmit={handleSubmit(onSubmit)}>
+                <form className='form' noValidate onSubmit={handleSubmit(onSubmit)}>
                     <Label {...register("firstName")}>Email</Label>
                     <Input type="email" {...register("email")} error={errors.email?.message}></Input>
                     <ErrorMesssage>{errors.email?.message}</ErrorMesssage>
